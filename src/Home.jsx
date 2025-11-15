@@ -1,9 +1,10 @@
 import NavigationBar from "./NavigationBar"
+
 function Home() {
 
     return(
         <>
-            <NavigationBar/>
+            <NavigationBar />
             <div>Home Components</div>
         </>
     )

@@ -3,7 +3,7 @@ function Request() {
 
     return(
         <>
-            <NavigationBar/>
+            <NavigationBar />
             <div>Requestion Component</div>
         </>
     )

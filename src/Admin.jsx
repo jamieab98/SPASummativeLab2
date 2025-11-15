@@ -25,7 +25,16 @@ function Admin() {
             job.job.toLowerCase()===editingService.toLowerCase()
         ))
         const serviceId = searchedService.id
-        fetch(`http://localhost:3001/jobs/${serviceId}`)
+        fetch(`http://localhost:3001/jobs/${serviceId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "hourlyrate": updatedPrice,
+                "customerrating": updatedRanking
+            })
+        })
         .then(response=>response.json())
         .then((data)=>{
             console.log(data)

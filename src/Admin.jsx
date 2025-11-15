@@ -26,14 +26,11 @@ function Admin() {
                 {jobs.map((job) => (
                     <div key={job.id}>
                         <div>{job.job}</div>
-                        <div>{job.hourlyrate}</div>
-                        <div>{job.customerrating}</div>
-                        <button onClick={() => navigate('adminediting')}>Edit this Service</button>  
+                        <button onClick={() => navigate('/adminediting')}>Edit this Service</button>  
                         <div>_</div>      
                     </div>
                 ))}
             </div>
-            <Outlet />
         </>
     )
 }

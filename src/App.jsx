@@ -12,9 +12,8 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="store" element={<Store />} />
         <Route path="specialrequest" element={<SpecialRequest />} />
-        <Route path="admin" element={<Admin />}>
-          <Route path="adminediting" element={<AdminEditing/>} />
-        </Route>
+        <Route path="admin" element={<Admin />} />
+        <Route path="adminediting" element={<AdminEditing/>} />
       </Routes>
     </BrowserRouter>
   );

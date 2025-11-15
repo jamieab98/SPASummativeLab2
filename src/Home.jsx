@@ -11,7 +11,7 @@ function Home() {
                 <p>Please navigate through the page to see what service you might need.</p>
             </div>
             <div>
-                <p>If you don't see the service that you're looking for, feel free to put in a special request through the request tab!</p>
+                <p>If you don't see the service that you're looking for, feel free to put in a special request through the special request tab!</p>
             </div>
         </>
     )

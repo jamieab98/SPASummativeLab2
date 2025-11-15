@@ -4,7 +4,7 @@ function Request() {
     return(
         <>
             <NavigationBar />
-            <div>Requestion Component</div>
+            <div>Special Request Component</div>
         </>
     )
 }

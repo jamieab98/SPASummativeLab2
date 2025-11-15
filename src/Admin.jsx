@@ -37,9 +37,11 @@ function Admin() {
         })
         .then(response=>response.json())
         .then((data)=>{
-            console.log(data)
         })
         .catch(error=>console.log(error))
+        setEditingService("")
+        setUpdatedPrice(0)
+        setupdatedRanking(0)
     } 
 
     return(

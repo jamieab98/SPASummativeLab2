@@ -1,5 +1,8 @@
 function ServiceCard({service}) {
     
+    function handleBooking() {
+        console.log(`${service.job} was booked`)
+    }
 
     return(
         <>
@@ -7,7 +10,6 @@ function ServiceCard({service}) {
             <div>Description: {service.description}</div>
             <div>Hourly Rate: ${service.hourlyrate}</div>
             <div>Customer Rating: {service.customerrating}</div>
-            <button onClick={handleBooking}>Book Service</button>
         </>
     )
 }

@@ -1,4 +1,5 @@
 function ServiceCard({service}) {
+    
 
     return(
         <>
@@ -6,7 +7,7 @@ function ServiceCard({service}) {
             <div>Description: {service.description}</div>
             <div>Hourly Rate: ${service.hourlyrate}</div>
             <div>Customer Rating: {service.customerrating}</div>
-            <button>Book Service</button>
+            <button onClick={handleBooking}>Book Service</button>
         </>
     )
 }

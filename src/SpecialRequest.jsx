@@ -1,6 +1,6 @@
 import NavigationBar from "./NavigationBar"
 import { useState} from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4} from "uuid"
 const jobsurl = "http://localhost:3001/jobs"
 
@@ -17,7 +17,7 @@ function Request() {
             "id": newId,
             "job": newJobName,
             "description": newDescription,
-            "hourlyrate": newPrice,
+            "hourlyrate": Number(newPrice),
             "customerrating": "0 Stars"
         }
         fetch(jobsurl, {

@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import NavigationBar from "./NavigationBar"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 const jobsurl = "http://localhost:3001/jobs"
 
 function Admin() {
@@ -27,11 +28,12 @@ function Admin() {
                         <div>{job.job}</div>
                         <div>{job.hourlyrate}</div>
                         <div>{job.customerrating}</div>
-                        <button onClick={() => navigate('/adminediting')}>Edit this Service</button>  
+                        <button onClick={() => navigate('adminediting')}>Edit this Service</button>  
                         <div>_</div>      
                     </div>
                 ))}
             </div>
+            <Outlet />
         </>
     )
 }

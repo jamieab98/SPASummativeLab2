@@ -1,6 +1,6 @@
 import NavigationBar from "./NavigationBar"
 import { useEffect, useState } from "react"
-import ServicesCard from "./ServicesCard"
+import ServiceCard from "./ServiceCard"
 const jobsurl = "http://localhost:3001/jobs"
 
 function Store() {
@@ -11,7 +11,6 @@ function Store() {
         .then(response => response.json())
         .then((data) => {
             setServices(data)
-            console.log(data)
         })
         .catch(error => console.log(error))
     }, [])
@@ -24,7 +23,9 @@ function Store() {
             </div>
             <div>
                 {services.map((service) => (
-                    <ServicesCard  />
+                    <div key={service.id}>
+                        <ServiceCard service={service}/>
+                    </div>
                 ))}
             </div>
         </>

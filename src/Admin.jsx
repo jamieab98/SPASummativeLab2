@@ -25,7 +25,12 @@ function Admin() {
             job.job.toLowerCase()===editingService.toLowerCase()
         ))
         const serviceId = searchedService.id
-        
+        fetch(`http://localhost:3001/jobs/${serviceId}`)
+        .then(response=>response.json())
+        .then((data)=>{
+            console.log(data)
+        })
+        .catch(error=>console.log(error))
     } 
 
     return(

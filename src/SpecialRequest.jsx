@@ -1,5 +1,6 @@
 import NavigationBar from "./NavigationBar"
 import { useState, useId } from "react";
+const jobsurl = "http://localhost:3001/jobs"
 
 function Request() {
     const [newJobName, setNewJobName] = useState("")
@@ -16,7 +17,17 @@ function Request() {
             "hourlyrate": newPrice,
             "customerrating": "0 Stars"
         }
-        console.log(newJob)
+        fetch(jobsurl, {
+            method: "POST",
+            header: {"Content-Type": "application/json"},
+            body: JSON.stringify(newJob)
+        })
+        .then(response=>response.json())
+        .then(data=>console.log(data))
+        .catch(error=>console.log(error))
+        setNewJobName("")
+        setNewDescription("")
+        setNewPrice(0)
     }
 
     return(

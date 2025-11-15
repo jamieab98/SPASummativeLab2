@@ -1,47 +1,54 @@
 {
-    "storeinfo": [
-        {
-            "id": 1,
-            "name": "Jamie's Personal Services",
-            "description": "I can do it all. Just name your price",
-            "phone number": "8034206967"
-        }
-    ],
-    "jobs": [
-        {
-            "id": 1,
-            "job": "Personal Clown",
-            "description": "Need a laugh? I'm your guy. No matter the situation, I wil make sure to read the room and deliver the most mid jokes to break the silence",
-            "hourlyrate": 20,
-            "customerrating": "5 Stars"
-        },
-        {
-            "id": 2,
-            "job": "Babysitter",
-            "description": "Have a child that needs to be sat on or watched, I suppose I can do that. Kids are not my strong suit but I can make sure you get them back in one piece",
-            "hourlyrate": 35,
-            "customerrating": "2 Stars"
-        },
-        {
-            "id": 3,
-            "job": "Science Tutor",
-            "description": "Now this is right up my alley. I've spent more time and money than I would like to admit learning that the mitochondria is the powerhose of the cell but I know it. PS, ask me abou the central dogma of biology",
-            "hourlyrate": 30,
-            "customerrating": "4.8 Stars"
-        },
-        {
-            "id": 4,
-            "job": "Professional Frisbee Player",
-            "description": "Believe it or not, I am technically a retired professinoal ultimate frisbee player. I played in the 2024 season for the team that lost in the UFA finals. Kinda sad but also... my team got second in the nation. Kinda hype. I don't know what you'd want this service for but it's here for ya",
-            "hourlyrate": 50,
-            "customerrating": "4 Stars"
-        },
-        {
-            "id": 5,
-            "job": "Furniture Mover",
-            "description": "I can't say I would recommened booking this service but if you need me, I suppose I can help... Just don't expect me to drive the truck or carry stuff on my own.",
-            "hourlyrate": 40,
-            "customerrating": "2.8 Stars"
-        }
-    ]
+  "storeinfo": [
+    {
+      "id": "1",
+      "name": "Jamie's Personal Services",
+      "description": "I can do it all. Just name your price",
+      "phone number": "8034206967"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "1",
+      "job": "Personal Clown",
+      "description": "Need a laugh? I'm your guy. No matter the situation, I wil make sure to read the room and deliver the most mid jokes to break the silence",
+      "hourlyrate": 20,
+      "customerrating": "5 Stars"
+    },
+    {
+      "id": "2",
+      "job": "Babysitter",
+      "description": "Have a child that needs to be sat on or watched, I suppose I can do that. Kids are not my strong suit but I can make sure you get them back in one piece",
+      "hourlyrate": 35,
+      "customerrating": "2 Stars"
+    },
+    {
+      "id": "3",
+      "job": "Science Tutor",
+      "description": "Now this is right up my alley. I've spent more time and money than I would like to admit learning that the mitochondria is the powerhose of the cell but I know it. PS, ask me abou the central dogma of biology",
+      "hourlyrate": 30,
+      "customerrating": "4.8 Stars"
+    },
+    {
+      "id": "4",
+      "job": "Professional Frisbee Player",
+      "description": "Believe it or not, I am technically a retired professinoal ultimate frisbee player. I played in the 2024 season for the team that lost in the UFA finals. Kinda sad but also... my team got second in the nation. Kinda hype. I don't know what you'd want this service for but it's here for ya",
+      "hourlyrate": 50,
+      "customerrating": "4 Stars"
+    },
+    {
+      "id": "5",
+      "job": "Furniture Mover",
+      "description": "I can't say I would recommened booking this service but if you need me, I suppose I can help... Just don't expect me to drive the truck or carry stuff on my own.",
+      "hourlyrate": 40,
+      "customerrating": "2.8 Stars"
+    },
+    {
+      "id": "_r_0_",
+      "job": "House Nanny",
+      "description": "I need my house cleaned",
+      "hourlyrate": "50",
+      "customerrating": "0 Stars"
+    }
+  ]
 }

@@ -27,9 +27,7 @@ function Request() {
         })
         .then(response=>response.json())
         .then((data) => {
-            console.log(data)
             navigate(`/store`)
-
         })
         .catch(error=>console.log(error))
         setNewJobName("")

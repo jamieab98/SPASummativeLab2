@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom"
+import { Link } from "react-router-dom"
 function NavigationBar() {
 
     return(
@@ -8,7 +8,6 @@ function NavigationBar() {
                 <Link to="/store">Store</Link>  |{" "}
                 <Link to="/specialrequest">Special Request</Link>  |{" "}
                 <Link to="/admin">Admin Portal</Link>
-                <Outlet />
             </div>
         </>
     )

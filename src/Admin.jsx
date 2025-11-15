@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import NavigationBar from "./NavigationBar"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 const jobsurl = "http://localhost:3001/jobs"
 
 function Admin() {
@@ -13,6 +14,7 @@ function Admin() {
         })
         .catch(error=>console.log(error))
     }, [])
+    const navigate = useNavigate()
 
     return(
         <>
@@ -24,7 +26,8 @@ function Admin() {
                     <div key={job.id}>
                         <div>{job.job}</div>
                         <div>{job.hourlyrate}</div>
-                        <div>{job.customerrating}</div>  
+                        <div>{job.customerrating}</div>
+                        <button onClick={() => navigate('/adminediting')}>Edit this Service</button>  
                         <div>_</div>      
                     </div>
                 ))}

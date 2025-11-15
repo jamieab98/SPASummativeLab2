@@ -1,8 +1,4 @@
 function ServiceCard({service}) {
-    
-    function handleBooking() {
-        console.log(`${service.job} was booked`)
-    }
 
     return(
         <>

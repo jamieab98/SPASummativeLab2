@@ -1,12 +1,15 @@
 import NavigationBar from "./NavigationBar"
-import { useState, useId } from "react";
+import { useState} from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import { v4 as uuidv4} from "uuid"
 const jobsurl = "http://localhost:3001/jobs"
 
 function Request() {
     const [newJobName, setNewJobName] = useState("")
     const [newDescription, setNewDescription] = useState("")
     const [newPrice, setNewPrice] = useState(0)
-    const newId = useId();
+    const newId = uuidv4();
+    const navigate = useNavigate();
 
     function handleRequest(e){
         e.preventDefault();
@@ -23,7 +26,11 @@ function Request() {
             body: JSON.stringify(newJob)
         })
         .then(response=>response.json())
-        .then(data=>console.log(data))
+        .then((data) => {
+            console.log(data)
+            navigate(`/store`)
+
+        })
         .catch(error=>console.log(error))
         setNewJobName("")
         setNewDescription("")

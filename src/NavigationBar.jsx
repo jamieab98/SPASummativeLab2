@@ -3,7 +3,7 @@ function NavigationBar() {
 
     return(
         <>
-            <div><NavigationBar/></div>
+            <div>Navigation Bar</div>
         </>
     )
 }

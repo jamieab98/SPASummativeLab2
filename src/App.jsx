@@ -4,9 +4,14 @@ import Store from "./Store";
 import SpecialRequest from "./SpecialRequest";
 import Admin from "./Admin";
 import AdminEditing from "./AdminEditing";
+import ServicesContext from "./ServicesContext"
+import { useState } from "react";
 
 function App() {
+  const [services, setServices] = useState([])
+
   return (
+    <ServicesContext.Provider value={{services, setServices}}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -16,6 +21,7 @@ function App() {
         <Route path="adminediting" element={<AdminEditing/>} />
       </Routes>
     </BrowserRouter>
+    </ServicesContext.Provider>
   );
 }
 

@@ -44,15 +44,16 @@ function Admin() {
         setEditingService("")
         setUpdatedPrice(0)
         setupdatedRanking(0)
-    } 
+    }
 
     return(
         <>
             <NavigationBar/>
-            <h3>Welcome to the Admin Portal</h3>
+            <h3>Welcome to the Admi n Portal</h3>
             <ul>
                 {serviceList.map((service)=> (
-                    <li key={service} onClick={()=>{setEditingService(service)
+                    <li key={service} onClick={() => {
+                        setEditingService(service);
                     }}>{service}</li>
                 ))}
             </ul>

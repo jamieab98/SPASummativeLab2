@@ -19,6 +19,8 @@ function Admin() {
         .catch(error=>console.log(error))
     }, [])
 
+    const serviceList = jobs.map((job) => job.job)
+
     function handleSubmit(e) {
         e.preventDefault();
         const searchedService = jobs.find((job)=> (

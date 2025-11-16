@@ -49,13 +49,6 @@
       "description": "I am out of shape and need to get into the gym. I don' t know what to work on and need help with motivation",
       "hourlyrate": 50,
       "customerrating": "0 Stars"
-    },
-    {
-      "id": "836304eb-ac11-4135-b3db-f91d67b546cb",
-      "job": "Temp",
-      "description": "Temp",
-      "hourlyrate": "30",
-      "customerrating": "10"
     }
   ]
 }

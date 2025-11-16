@@ -8,6 +8,7 @@ function Admin() {
     const [editingService, setEditingService] = useState("")
     const [updatedPrice, setUpdatedPrice] = useState(0)
     const [updatedRanking, setupdatedRanking] = useState(0)
+    const [jobList, setJobList] = useState([])
     
 
     useEffect(() => {
@@ -15,11 +16,10 @@ function Admin() {
         .then(response=>response.json())
         .then((data)=>{
             setJobs(data)
+            setJobList(jobs.map((job=>job.job)))
         })
         .catch(error=>console.log(error))
     }, [jobs])
-
-    const serviceList = jobs.map((job) => job.job)
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -66,7 +66,7 @@ function Admin() {
             <NavigationBar/>
             <h3>Welcome to the Admi n Portal</h3>
             <ul>
-                {serviceList.map((service)=> (
+                {jobList.map((service)=> (
                     <li key={service} onClick={() => {
                         setEditingService(service);
                     }}>{service}</li>

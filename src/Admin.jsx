@@ -1,10 +1,10 @@
-import { useEffect, useId } from "react"
+import { useEffect, useId, useContext, useState } from "react"
 import NavigationBar from "./NavigationBar"
-import { useState } from "react"
+import ServicesContext from "./ServicesContext"
 const jobsurl = "http://localhost:3001/jobs"
 
 function Admin() {
-    const [jobs, setJobs] = useState([])
+    const {services, setServices} = useContext(ServicesContext)
     const [editingService, setEditingService] = useState("")
     const [updatedPrice, setUpdatedPrice] = useState(0)
     const [updatedRanking, setupdatedRanking] = useState(0)
@@ -18,15 +18,15 @@ function Admin() {
         fetch(jobsurl)
         .then(response=>response.json())
         .then((data)=>{
-            setJobs(data)
-            setJobList(jobs.map((job=>job.job)))
+            setServices(data)
+            setJobList(services.map((job=>job.job)))
         })
         .catch(error=>console.log(error))
-    }, [jobs])
+    }, [services])
 
     function handleSubmit(e) {
         e.preventDefault();
-        const searchedService = jobs.find((job)=> (
+        const searchedService = services.find((job)=> (
             job.job.toLowerCase()===editingService.toLowerCase()
         ))
         const serviceId = searchedService.id
@@ -42,7 +42,7 @@ function Admin() {
         })
         .then(response=>response.json())
         .then((data)=>{
-            setJobs(data)
+            setServices(data)
         })
         .catch(error=>console.log(error))
         setEditingService("")
@@ -51,7 +51,7 @@ function Admin() {
     }
 
     function handleDelete(){
-        const serviceId = jobs.find((j) => (
+        const serviceId = services.find((j) => (
             j.job.includes(editingService)
         ))
         fetch(`http://localhost:3001/jobs/${serviceId.id}`, {
@@ -59,7 +59,7 @@ function Admin() {
         })
         .then(response=>response.json())
         .then((data) => {
-            setJobs(data)
+            setServices(data)
         })
         .catch(error => console.log(error))
     }

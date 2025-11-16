@@ -64,7 +64,7 @@ function Admin() {
     return(
         <>
             <NavigationBar/>
-            <h3>Welcome to the Admi n Portal</h3>
+            <h3>Welcome to the Admin Portal</h3>
             <ul>
                 {jobList.map((service)=> (
                     <li key={service} onClick={() => {

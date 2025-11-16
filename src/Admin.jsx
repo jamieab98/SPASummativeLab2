@@ -17,7 +17,7 @@ function Admin() {
             setJobs(data)
         })
         .catch(error=>console.log(error))
-    }, [])
+    }, [jobs])
 
     const serviceList = jobs.map((job) => job.job)
 
@@ -39,11 +39,26 @@ function Admin() {
         })
         .then(response=>response.json())
         .then((data)=>{
+            setJobs(data)
         })
         .catch(error=>console.log(error))
         setEditingService("")
         setUpdatedPrice(0)
         setupdatedRanking(0)
+    }
+
+    function handleDelete(){
+        const serviceId = jobs.find((j) => (
+            j.job.includes(editingService)
+        ))
+        fetch(`http://localhost:3001/jobs/${serviceId.id}`, {
+            method: "DELETE"
+        })
+        .then(response=>response.json())
+        .then((data) => {
+            setJobs(data)
+        })
+        .catch(error => console.log(error))
     }
 
     return(
@@ -65,6 +80,7 @@ function Admin() {
                 <label>Update Customer Rating</label>
                 <input type="number" value={updatedRanking} onChange={(e)=> setupdatedRanking(e.target.value)}></input>
                 <button type="submit">Submit Changes</button>
+                <button type="button" onClick={handleDelete}>Delete Service</button>
             </form>
         </>
     )

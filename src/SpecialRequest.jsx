@@ -40,12 +40,12 @@ function Request() {
             <NavigationBar />
             <h3>Create New Service</h3>
             <form onSubmit = {handleRequest}>
-                <label>Job: </label>
-                <input type="text" value={newJobName} onChange={(e)=>setNewJobName(e.target.value)} placeholder="Name of Job"/>
-                <label>Decription: </label>
-                <input type="text" value={newDescription} onChange={(e)=>setNewDescription(e.target.value)} placeholder="Description"/>
-                <label>Hourly Rate Suggestion:</label>
-                <input type="number" value={newPrice} onChange={(e)=>setNewPrice(e.target.value)}></input>
+                <label htmlFor="JobName">Job: </label>
+                <input type="text" value={newJobName} onChange={(e)=>setNewJobName(e.target.value)} placeholder="Name of Job" id="JobName"/>
+                <label htmlFor="JobDescription">Decription: </label>
+                <input type="text" value={newDescription} onChange={(e)=>setNewDescription(e.target.value)} placeholder="Description" id="JobDescription"/>
+                <label htmlFor="JobRate">Hourly Rate Suggestion:</label>
+                <input type="number" value={newPrice} onChange={(e)=>setNewPrice(e.target.value)} id="JobRate"></input>
                 <button type="submit">Request Job</button>
             </form>
         </>

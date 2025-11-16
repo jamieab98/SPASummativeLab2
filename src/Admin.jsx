@@ -73,12 +73,12 @@ function Admin() {
                 ))}
             </ul>
             <form onSubmit={handleSubmit}>
-                <label>Service to Change</label>
-                <input type="text" value={editingService} onChange={(e)=> setEditingService(e.target.value)} placeholer="Service"></input>
-                <label>Update Price</label>
-                <input type="number" value={updatedPrice} onChange={(e)=> setUpdatedPrice(e.target.value)}></input>
-                <label>Update Customer Rating</label>
-                <input type="number" value={updatedRanking} onChange={(e)=> setupdatedRanking(e.target.value)}></input>
+                <label htmlFor="editingService">Service to Change</label>
+                <input type="text" value={editingService} onChange={(e)=> setEditingService(e.target.value)} placeholer="Service" id="editingService"></input>
+                <label htmlFor="updatedPrice">Update Price</label>
+                <input type="number" value={updatedPrice} onChange={(e)=> setUpdatedPrice(e.target.value)} id="updatedPrice"></input>
+                <label htmlFor="updatedRanking">Update Customer Rating</label>
+                <input type="number" value={updatedRanking} onChange={(e)=> setupdatedRanking(e.target.value)} id="updatedRanking"></input>
                 <button type="submit">Submit Changes</button>
                 <button type="button" onClick={handleDelete}>Delete Service</button>
             </form>

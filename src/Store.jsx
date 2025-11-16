@@ -1,11 +1,12 @@
 import NavigationBar from "./NavigationBar"
-import { useEffect, useContext } from "react"
+import { useEffect, useContext, } from "react"
 import ServiceCard from "./ServiceCard"
 import ServicesContext from "./ServicesContext"
 const jobsurl = "http://localhost:3001/jobs"
 
 function Store() {
     const {services, setServices} = useContext(ServicesContext)
+
 
     useEffect(() => {
         fetch(jobsurl)
@@ -21,6 +22,7 @@ function Store() {
             <NavigationBar />
             <div>
                 <h2>List of Services</h2>
+                <input type="text" placeholder="Seach..."></input>
             </div>
             <div>
                 {services.map((service) => (

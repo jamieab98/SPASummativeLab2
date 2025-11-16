@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useId } from "react"
 import NavigationBar from "./NavigationBar"
 import { useState } from "react"
 const jobsurl = "http://localhost:3001/jobs"
@@ -9,6 +9,9 @@ function Admin() {
     const [updatedPrice, setUpdatedPrice] = useState(0)
     const [updatedRanking, setupdatedRanking] = useState(0)
     const [jobList, setJobList] = useState([])
+    const AdminNameId = useId();
+    const AdminRankingId = useId();
+    const AdminPriceId = useId();
     
 
     useEffect(() => {
@@ -73,12 +76,12 @@ function Admin() {
                 ))}
             </ul>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="editingService">Service to Change</label>
-                <input type="text" value={editingService} onChange={(e)=> setEditingService(e.target.value)} placeholer="Service" id="editingService"></input>
-                <label htmlFor="updatedPrice">Update Price</label>
-                <input type="number" value={updatedPrice} onChange={(e)=> setUpdatedPrice(e.target.value)} id="updatedPrice"></input>
-                <label htmlFor="updatedRanking">Update Customer Rating</label>
-                <input type="number" value={updatedRanking} onChange={(e)=> setupdatedRanking(e.target.value)} id="updatedRanking"></input>
+                <label htmlFor={AdminNameId}>Service to Change</label>
+                <input type="text" value={editingService} onChange={(e)=> setEditingService(e.target.value)} placeholer="Service" id={AdminNameId}></input>
+                <label htmlFor={AdminPriceId}>Update Price</label>
+                <input type="number" value={updatedPrice} onChange={(e)=> setUpdatedPrice(e.target.value)} id={AdminPriceId}></input>
+                <label htmlFor={AdminRankingId}>Update Customer Rating</label>
+                <input type="number" value={updatedRanking} onChange={(e)=> setupdatedRanking(e.target.value)} id={AdminRankingId}></input>
                 <button type="submit">Submit Changes</button>
                 <button type="button" onClick={handleDelete}>Delete Service</button>
             </form>

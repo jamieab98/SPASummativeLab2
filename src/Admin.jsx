@@ -50,8 +50,14 @@ function Admin() {
         <>
             <NavigationBar/>
             <h3>Welcome to the Admin Portal</h3>
+            <ul>
+                {serviceList.map((service)=> (
+                    <li key={service} onClick={()=>{setEditingService(service)
+                    }}>{service}</li>
+                ))}
+            </ul>
             <form onSubmit={handleSubmit}>
-                <label>Which service are you changing?</label>
+                <label>Service to Change</label>
                 <input type="text" value={editingService} onChange={(e)=> setEditingService(e.target.value)} placeholer="Service"></input>
                 <label>Update Price</label>
                 <input type="number" value={updatedPrice} onChange={(e)=> setUpdatedPrice(e.target.value)}></input>

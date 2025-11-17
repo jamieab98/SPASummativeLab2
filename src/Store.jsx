@@ -1,5 +1,5 @@
 import NavigationBar from "./NavigationBar"
-import { useEffect, useContext, useState } from "react"
+import { useContext, useState } from "react"
 import ServiceCard from "./ServiceCard"
 import ServicesContext from "./ServicesContext"
 import useFetchJobs from "./useFetchJobs"

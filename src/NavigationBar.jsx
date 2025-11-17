@@ -3,7 +3,7 @@ function NavigationBar() {
 
     return(
         <>
-            <div>
+            <div data-testid="NavigationBarDiv">
                 <Link to="/">Home</Link>  |{" "}
                 <Link to="/store">Store</Link>  |{" "}
                 <Link to="/specialrequest">Special Request</Link>  |{" "}

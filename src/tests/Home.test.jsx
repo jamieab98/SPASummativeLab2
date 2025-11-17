@@ -11,6 +11,14 @@ describe("Home Page", () => {
             </MemoryRouter>
             );
         expect(screen.getByText("My Service Shop!")).toBeInTheDocument();
-        expect(screen.getByText("Home")).toBeInTheDocument();
+    })
+    it('Renders the Navigation Bar', () => {
+        render(
+            <MemoryRouter>
+                <Home/>
+            </MemoryRouter>
+        );
+        expect(screen.getByTestId("NavigationBarDiv")).toBeInTheDocument();
+        expect(screen.getByText("Special Request")).toBeInTheDocument();
     })
 })

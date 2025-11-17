@@ -19,7 +19,7 @@ function Store() {
             <NavigationBar />
             <div>
                 <h2>List of Services</h2>
-                <input type="text" placeholder="Seach..." value={searchedService} onChange={(e)=>setSearchedService(e.target.value)} id="userSearch"></input>
+                <input type="text" placeholder="Seach..." value={searchedService} onChange={(e)=>setSearchedService(e.target.value)} id="userSearch" data-testid="ServiceSearchBar"></input>
             </div>
             <div>
                 {filteredServices.map((service) => (

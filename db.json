@@ -49,20 +49,6 @@
       "description": "I am out of shape and need to get into the gym. I don' t know what to work on and need help with motivation",
       "hourlyrate": 50,
       "customerrating": "0 Stars"
-    },
-    {
-      "id": "88efa4e3-79ca-4225-bed5-b54d5ff4de6d",
-      "job": "Astronaut",
-      "description": "Astronaut Description",
-      "hourlyrate": 100,
-      "customerrating": "0 Stars"
-    },
-    {
-      "id": "80005def-3217-4790-8ecb-ca122fd73a17",
-      "job": "Astronaut",
-      "description": "Astronaut Description",
-      "hourlyrate": 100,
-      "customerrating": "0 Stars"
     }
   ]
 }

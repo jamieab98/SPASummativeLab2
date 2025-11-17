@@ -9,7 +9,7 @@ describe("Store Page", () => {
     it('Renders information about jobs', () => {
         render(
             <MemoryRouter>
-                <ServicesContext value={{services: mockServices}}>
+                <ServicesContext value={{services: mockServices, setServices: mockSetServices}}>
                     <Store/>
                 </ServicesContext>
             </MemoryRouter>
@@ -21,7 +21,7 @@ describe("Store Page", () => {
     it('Renders the Navigation Bar', () => {
         render(
             <MemoryRouter>
-                <ServicesContext value={{services : mockServices}}>
+                <ServicesContext value={{services : mockServices, setServices: mockSetServices}}>
                     <Store />
                 </ServicesContext>
             </MemoryRouter>

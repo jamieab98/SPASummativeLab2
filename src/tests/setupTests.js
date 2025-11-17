@@ -17,11 +17,9 @@ export const mockServices = [
         "customerrating": "1.9"
     }
 ]
-export const mockNewJob = {
-    "id": "abcd",
-    "job": "Teacher",
-    "description": "Teacher Description",
-    "hourlyrate": Number("2"),
-    "customerrating": 0
-}
+export const mockFetch = global.fetch = vi.fn(()=>
+    Promise.resolve({
+        json: ()=>Promise.resolve(mockServices)
+    })
+)
 export const mockSetServices = vi.fn()

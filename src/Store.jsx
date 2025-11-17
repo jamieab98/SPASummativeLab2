@@ -2,23 +2,17 @@ import NavigationBar from "./NavigationBar"
 import { useEffect, useContext, useState } from "react"
 import ServiceCard from "./ServiceCard"
 import ServicesContext from "./ServicesContext"
+import useFetchJobs from "./useFetchJobs"
 const jobsurl = "http://localhost:3001/jobs"
 
 function Store() {
-    const {services, setServices} = useContext(ServicesContext)
+    const {services} = useContext(ServicesContext)
     const [searchedService, setSearchedService] = useState("")
     const filteredServices = services.filter((service) => 
         service.job.toLowerCase().includes(searchedService.toLowerCase())
     )
 
-    useEffect(() => {
-        fetch(jobsurl)
-        .then(response => response.json())
-        .then((data) => {
-            setServices(data)
-        })
-        .catch(error => console.log(error))
-    }, [])
+    useFetchJobs(jobsurl);
 
     return(
         <>

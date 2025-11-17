@@ -3,7 +3,7 @@ import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import Store from "../Store";
 import ServicesContext from "../ServicesContext";
-import { mockServices } from "./setupTests";
+import { mockServices, mockSetServices } from "./setupTests";
 
 describe("Store Page", () => {
     it('Renders information about jobs', () => {

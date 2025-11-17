@@ -60,6 +60,7 @@ function Admin() {
         .then(response=>response.json())
         .then((data) => {
             setServices(data)
+            setEditingService("")
         })
         .catch(error => console.log(error))
     }

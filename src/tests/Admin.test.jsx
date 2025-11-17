@@ -17,4 +17,15 @@ describe("Admin", () => {
         expect(await screen.findByTestId("NavigationBarDiv")).toBeInTheDocument()
         expect(await screen.findByText("Special Request")).toBeInTheDocument()
     })
+    it('Renders a list of services', async () => {
+        render(
+            <MemoryRouter>
+                <ServicesContext value={{services: mockServices, setServices: mockSetServices}}>
+                    <Admin />
+                </ServicesContext>
+            </MemoryRouter>
+        );
+        expect(await screen.findByText("Janitor")).toBeInTheDocument()
+        expect(await screen.findByText("Astronaut")).toBeInTheDocument()
+    })
 })

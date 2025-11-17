@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { test, expect } from "vitest";
+import Store from "../Store";
+import ServicesContext from "../ServicesContext";
 
 test('Renders Service Names', () => {
     const mockData = [
@@ -18,5 +20,9 @@ test('Renders Service Names', () => {
             customerrating: "3"
         }
     ];
-
+    render(
+        <ServicesContext.Provider value={{services: mockData, setServices: () => {} }}>
+            <Store />
+        </ServicesContext.Provider>
+    )
 })

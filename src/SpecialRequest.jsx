@@ -43,9 +43,9 @@ function Request() {
             <NavigationBar />
             <h3>Create New Service</h3>
             <form onSubmit = {handleRequest}>
-                <label htmlFor={NameId}>Job: </label>
+                <label htmlFor={NameId}>Job:</label>
                 <input type="text" value={newJobName} onChange={(e)=>setNewJobName(e.target.value)} placeholder="Name of Job" id={NameId}/>
-                <label htmlFor={DescriptionId}>Decription: </label>
+                <label htmlFor={DescriptionId}>Description:</label>
                 <input type="text" value={newDescription} onChange={(e)=>setNewDescription(e.target.value)} placeholder="Description" id={DescriptionId}/>
                 <label htmlFor={PriceId}>Hourly Rate Suggestion:</label>
                 <input type="number" value={newPrice} onChange={(e)=>setNewPrice(e.target.value)} id={PriceId}></input>

@@ -1,9 +1,9 @@
 import { screen, render, waitFor } from "@testing-library/react";
-import { it, describe, expect } from "vitest";
+import { it, describe, expect, vi } from "vitest";
 import Admin from "../Admin";
 import { MemoryRouter } from "react-router-dom";
 import ServicesContext from "../ServicesContext";
-import { mockServices, mockSetServices } from "./setupTests";
+import { mockServices, mockSetServices, mockUpdatedService, mockUpdateFetch } from "./setupTests";
 import userEvent from "@testing-library/user-event";
 
 describe("Admin", () => {
@@ -70,6 +70,12 @@ describe("Admin", () => {
     })
     it('Modifies a service', async () => {
         const user = userEvent.setup()
+        global.fetch = vi.fn(() => 
+            Promise.resolve({
+                json: () => Promise.resolve(mockUpdatedService)
+            })
+        );
+
         render(
             <MemoryRouter>
                 <ServicesContext value={{services: mockServices, setServices: mockSetServices}}>
@@ -79,6 +85,19 @@ describe("Admin", () => {
         );
         const changeButton = await screen.findByText("Submit Changes")
         await user.click(screen.getByText("Astronaut"))
-        await user.type(screen.getByLabelText("Update Price"), "20")
-        await user.type(screen.getByLabelText("Update Customer Rating"), "3.3")})
+        await user.type(screen.getByLabelText("Update Price"), "500")
+        await user.type(screen.getByLabelText("Update Customer Rating"), "3.3")
+        await user.click(changeButton)
+        expect(fetch).toHaveBeenCalledWith(
+            expect.stringContaining("/jobs/69"),
+            expect.objectContaining({
+                method: "PATCH",
+                headers: expect.any(Object),
+                body: expect.any(String),
+            })
+        )
+        const body= JSON.parse(fetch.mock.calls[1][1].body);
+        expect (body.hourlyrate).toBe("500")
+        expect (body.customerrating).toBe("3.3")
+    })
 })

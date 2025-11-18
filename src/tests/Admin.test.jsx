@@ -5,7 +5,6 @@ import { MemoryRouter } from "react-router-dom";
 import ServicesContext from "../ServicesContext";
 import { mockServices, mockSetServices } from "./setupTests";
 import userEvent from "@testing-library/user-event";
-import { updateSelectionOnFocus } from "@testing-library/user-event/dist/cjs/event/selection/updateSelectionOnFocus.js";
 
 describe("Admin", () => {
     it('Renders the Navigation Bar', async () => {
@@ -69,4 +68,17 @@ describe("Admin", () => {
             expect(screen.queryByText("Janitor")).not.toBeInTheDocument()
         })
     })
+    it('Modifies a service', async () => {
+        const user = userEvent.setup()
+        render(
+            <MemoryRouter>
+                <ServicesContext value={{services: mockServices, setServices: mockSetServices}}>
+                    <Admin />
+                </ServicesContext>
+            </MemoryRouter>
+        );
+        const changeButton = await screen.findByText("Submit Changes")
+        await user.click(screen.getByText("Astronaut"))
+        await user.type(screen.getByLabelText("Update Price"), "20")
+        await user.type(screen.getByLabelText("Update Customer Rating"), "3.3")})
 })

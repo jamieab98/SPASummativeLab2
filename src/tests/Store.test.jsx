@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+<<<<<<< HEAD
 import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import Store from "../Store";
@@ -29,4 +30,32 @@ describe("Store Page", () => {
         expect(screen.getByTestId("NavigationBarDiv")).toBeInTheDocument()
         expect(screen.getByText("Special Request")).toBeInTheDocument()
     })
+=======
+import { test, expect } from "vitest";
+import Store from "../Store";
+import ServicesContext from "../ServicesContext";
+
+test('Renders Service Names', () => {
+    const mockData = [
+        {
+            id: "200",
+            job: "Plumber",
+            description: "Plumber Description",
+            hourlyrate: "10",
+            customerrating: "4"
+        },
+        {
+            id: "201",
+            job: "Cop",
+            description: "Cop Description",
+            hourlyrate: "20",
+            customerrating: "3"
+        }
+    ];
+    render(
+        <ServicesContext.Provider value={{services: mockData, setServices: () => {} }}>
+            <Store />
+        </ServicesContext.Provider>
+    )
+>>>>>>> test
 })

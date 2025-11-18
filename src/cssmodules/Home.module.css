@@ -1,9 +1,30 @@
-
-.homecontent{
+.homecontainer{
     background-color: #accbef;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh
+}
+.homeheading{
+    font-size: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+    background-color: #aadbd3;
+}
+.homecontents{
+    display: flex;
+    padding: 25px;
+    justify-content: space-evenly;
+}
+.homecontent{
+    background-color: #f2b5de;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    font-size: 25px;
+    width: 25%;
+    text-align: center;
 }

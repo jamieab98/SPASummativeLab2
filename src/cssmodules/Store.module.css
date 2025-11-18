@@ -1,0 +1,29 @@
+.store{
+    background-color: #accbef;
+}
+.servicesearchbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ae91e0;
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+}
+.searchheading{
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+.searchinput{
+    width: 25%;
+}
+.servicescontainer{
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.servicecard{
+    border: 1px solid black;
+}

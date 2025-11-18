@@ -18,12 +18,11 @@
     width: 25%;
 }
 .servicescontainer{
-    border: 1px solid black;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-.servicecard{
-    border: 1px solid black;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+    justify-content: space-around;
 }

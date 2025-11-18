@@ -2,6 +2,7 @@ import NavigationBar from "./NavigationBar"
 import { useState, useId} from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4} from "uuid"
+import styles from "./cssmodules/SpecialRequest.module.css"
 const jobsurl = "http://localhost:3001/jobs"
 
 function Request() {
@@ -41,16 +42,22 @@ function Request() {
     return(
         <>
             <NavigationBar />
-            <h3>Create New Service</h3>
-            <form onSubmit = {handleRequest}>
+            <div className={styles.request}>
+            <div className={styles.requestheadder}>Create New Service</div>
+            <form onSubmit = {handleRequest} className={styles.requestform}>
+                <div className={styles.requestinput}>
                 <label htmlFor={NameId}>Job:</label>
                 <input type="text" value={newJobName} onChange={(e)=>setNewJobName(e.target.value)} placeholder="Name of Job" id={NameId}/>
                 <label htmlFor={DescriptionId}>Description:</label>
                 <input type="text" value={newDescription} onChange={(e)=>setNewDescription(e.target.value)} placeholder="Description" id={DescriptionId}/>
                 <label htmlFor={PriceId}>Hourly Rate Suggestion:</label>
                 <input type="number" value={newPrice} onChange={(e)=>setNewPrice(e.target.value)} id={PriceId}></input>
+                </div>
+                <div className={styles.requestsubmit}>
                 <button type="submit">Request Job</button>
+                </div>
             </form>
+            </div>
         </>
     )
 }

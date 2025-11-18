@@ -1,9 +1,11 @@
-import { screen, render } from "@testing-library/react";
+import { screen, render, waitFor } from "@testing-library/react";
 import { it, describe, expect } from "vitest";
 import Admin from "../Admin";
 import { MemoryRouter } from "react-router-dom";
 import ServicesContext from "../ServicesContext";
 import { mockServices, mockSetServices } from "./setupTests";
+import userEvent from "@testing-library/user-event";
+import { updateSelectionOnFocus } from "@testing-library/user-event/dist/cjs/event/selection/updateSelectionOnFocus.js";
 
 describe("Admin", () => {
     it('Renders the Navigation Bar', async () => {
@@ -41,5 +43,30 @@ describe("Admin", () => {
         expect(await screen.findByLabelText("Update Customer Rating")).toBeInTheDocument()
         expect(await screen.findByText("Submit Changes")).toBeInTheDocument()
         expect(await screen.findByText("Delete Service")).toBeInTheDocument()
+    })
+    it('Deletes a service when delete button is pressed', async () => {
+        const user = userEvent.setup();
+        const {rerender} = render(
+            <MemoryRouter>
+                <ServicesContext value={{services: mockServices, setServices: mockSetServices}}>
+                    <Admin />
+                </ServicesContext>
+            </MemoryRouter>
+        )
+        const deleteButton = await screen.findByText("Delete Service")
+        const janitorItem = await screen.findByText("Janitor")
+        await user.click(janitorItem)
+        await user.click(deleteButton);
+        const udpatedMockServices = mockServices.filter(s=>s.job !== "Janitor")
+        rerender(
+            <MemoryRouter>
+                <ServicesContext value={{ services: udpatedMockServices, setServices: mockSetServices}}>
+                    <Admin />
+                </ServicesContext>
+            </MemoryRouter>
+        )
+        await waitFor(()=> {
+            expect(screen.queryByText("Janitor")).not.toBeInTheDocument()
+        })
     })
 })

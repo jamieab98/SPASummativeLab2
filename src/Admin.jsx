@@ -59,7 +59,7 @@ function Admin() {
         })
         .then(response=>response.json())
         .then((data) => {
-            setServices(data)
+            setServices(services.filter((s) => s.job !== data.job))
             setEditingService("")
         })
         .catch(error => console.log(error))

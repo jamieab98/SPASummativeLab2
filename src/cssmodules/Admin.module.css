@@ -1,0 +1,46 @@
+.adminpage{
+    background-color: #accbef;
+    height: 100vh;
+}
+.admintitle{
+    font-size: 30px;
+}
+.servicelist{
+    list-style-type: none;
+    padding-left: 0;
+}
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+li{
+    font-size: 20px;
+}
+.forminput{
+    display: flex;
+    flex-direction: column;
+    width: 30%
+}
+input{
+    margin-bottom: 10px;
+}
+.formbuttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 30%;
+}
+.formsubmit{
+    height: 25%;
+    background-color: #aadbd3;
+}
+.formdelete{
+    height: 25%;
+    background-color: rgb(193, 49, 78);
+}

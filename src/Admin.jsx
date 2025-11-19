@@ -1,6 +1,7 @@
 import { useEffect, useId, useContext, useState } from "react"
 import NavigationBar from "./NavigationBar"
 import ServicesContext from "./ServicesContext"
+import styles from "./cssmodules/Admin.module.css"
 const jobsurl = "http://localhost:3001/jobs"
 
 function Admin() {
@@ -68,8 +69,9 @@ function Admin() {
     return(
         <>
             <NavigationBar/>
-            <h3>Welcome to the Admin Portal</h3>
-            <ul>
+            <div className={styles.adminpage}>
+            <div className={styles.admintitle}>Welcome to the Admin Portal</div>
+            <ul className={styles.servicelist}>
                 {jobList.map((service)=> (
                     <li key={service} onClick={() => {
                         setEditingService(service);
@@ -77,15 +79,20 @@ function Admin() {
                 ))}
             </ul>
             <form onSubmit={handleSubmit}>
+                <div className={styles.forminput}>
                 <label htmlFor={AdminNameId}>Service to Change</label>
                 <input type="text" value={editingService} onChange={(e)=> setEditingService(e.target.value)} placeholer="Service" id={AdminNameId}></input>
                 <label htmlFor={AdminPriceId}>Update Price</label>
                 <input type="number" value={updatedPrice} onChange={(e)=> setUpdatedPrice(e.target.value)} id={AdminPriceId}></input>
                 <label htmlFor={AdminRankingId}>Update Customer Rating</label>
                 <input type="number" value={updatedRanking} onChange={(e)=> setupdatedRanking(e.target.value)} id={AdminRankingId}></input>
-                <button type="submit">Submit Changes</button>
-                <button type="button" onClick={handleDelete}>Delete Service</button>
+                </div>
+                <div className={styles.formbuttons}>
+                <button type="submit" className={styles.formsubmit}>Submit Changes</button>
+                <button type="button" onClick={handleDelete} className={styles.formdelete}>Delete Service</button>
+                </div>
             </form>
+            </div>
         </>
     )
 }
